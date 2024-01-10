@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose"
 
 const TaskSchema = new Schema({
-    title:{
+    title: {
         type: String,
         required: true
     },
@@ -10,13 +10,17 @@ const TaskSchema = new Schema({
         required: true
     },
     addedDate: {
-        type:Date,
+        type: Date,
         default: Date.now(),
         required: true
     },
-    status:{
+    status: {
         type: String,
-        enum: ['pending','completed'],
+        enum: ['pending', 'completed'],
+        required: true
+    },
+    userId: {
+        type: mongoose.ObjectId,
         required: true
     }
 })
