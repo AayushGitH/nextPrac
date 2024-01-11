@@ -15,13 +15,18 @@ export async function POST(request) {
             content,
             userId
         })
+        console.log(title, content, userId)
         const createdTask = task.save()
         return NextResponse.json(createdTask, {
             status: 201,
             statusText: 'Task created'
         })
     } catch (error) {
-        
+        console.log(error)
+        return NextResponse.json({
+            message:"Failed to create task",
+            status: 'Failure'
+        })
     }
 }
 
