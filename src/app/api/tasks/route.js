@@ -1,4 +1,4 @@
-import { getErrorResponse } from "@/app/helper/getErrorResponse";
+import { getErrorResponse } from "@/helper/getErrorResponse";
 import { Task } from "@/models/task";
 import { NextResponse } from "next/server";
 

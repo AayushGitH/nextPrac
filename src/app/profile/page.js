@@ -1,6 +1,6 @@
 const page = () => {
   return (
-    <div><h2><b>This is the profile page</b></h2></div>
+    <div><h2><b>Profile dashboard</b></h2></div>
   )
 }
 
