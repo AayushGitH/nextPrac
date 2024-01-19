@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import CustomNavbar from '@/components/CustomNavbar'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,9 +17,9 @@ export default function RootLayout({ children }) {
         <CustomNavbar/>
         <div className='flex justify-around'>
         <div>Left side Bar</div>
-        <div>{children}</div>
+        <div className='mt-5 mb-5'>{children}</div>
         </div>
-        <h3>This is the footer</h3>
+        <Footer/>
       </body>
     </html>
   )

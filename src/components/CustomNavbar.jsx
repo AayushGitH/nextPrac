@@ -10,9 +10,9 @@ const CustomNavbar = () => {
             </div>
         <div>
             <ul className='flex space-x-2'>
-                <Link href={'/'}>Home</Link>
-                <li><a href="#">Add task</a></li>
-                <li><a href="#">Show tasks</a></li>
+                <Link href={'/'} className='hover:text-blue-200'>Home</Link>
+                <Link href={'/add-task'} className='hover:text-blue-200'>Add task</Link>
+                <Link href={'/show-task'} className='hover:text-blue-200'>Show task</Link>
             </ul>
         </div>
         <div>
