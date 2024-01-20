@@ -1,4 +1,6 @@
 import React from 'react'
+import loginImage from '../../assets/loginImage.svg'
+import Image from 'next/image'
 
 export const metadata = {
     title: 'Add task - ' + process.env.SITE_NAME
@@ -6,11 +8,13 @@ export const metadata = {
 
 const AddTask = () => {
     return (
-        <div className='grid grid-cols-12 justify-center'>
-            <div className='border bg-gray-600 border-blue-600 rounded-2xl col-span-6 col-start-2 p-5'>
-                <h1>Add your task here</h1>
-                
+        <div className='grid grid-cols-12 text-white justify-center'>
+            <div className='bg-gray-600 col-span-6 col-start-4 rounded-xl p-5'>
                 <form >
+                    <div className='flex justify-center'>
+                        <Image src={loginImage} style={{ width: '30%' }} />
+                    </div>
+                    <h1 className='flex justify-center font-bold mt-3'>Add your task here</h1>
                     <div className='mt-4'>
                         <label htmlFor='task_title' className='block text-sm font-medium mb-2'>
                             Title
@@ -22,7 +26,23 @@ const AddTask = () => {
                         <label htmlFor='task_content' className='block text-sm font-medium mb-2'>
                             Content
                         </label>
-                        <textarea type='text' className='w-full p-1 rounded-xl bg-gray-400 focus:ring-gray-400 ' id='task_content'/>
+                        <textarea type='text' className='w-full p-1 rounded-xl bg-gray-400 focus:ring-gray-400 ' id='task_content' />
+                    </div>
+
+                    <div className='mt-4'>
+                        <label htmlFor='task_content' className='block text-sm font-medium mb-2'>
+                            Status
+                        </label>
+                        <select className='w-full p-1 rounded-xl bg-gray-400 focus:ring-gray-400 ' id='task_content'>
+                            <option value='none'>--- Select Status ---</option>
+                            <option value='Pending'>Pending</option>
+                            <option value='Pending'>Completed</option>
+                        </select>
+                    </div>
+
+                    <div className='mt-4 flex justify-center'>
+                        <button className='bg-blue-800 py-2 px-3 rounded-xl'>Add todo</button>
+                        <button className='bg-red-800 ms-2 py-2 px-3 rounded-xl'>Clear</button>
                     </div>
                 </form>
             </div>

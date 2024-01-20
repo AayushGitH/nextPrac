@@ -15,10 +15,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <CustomNavbar/>
-        <div className='flex justify-around'>
-        <div>Left side Bar</div>
+        {/* <div className='flex justify-around'> */}
+        {/* <div>Left side Bar</div> */}
         <div className='mt-5 mb-5'>{children}</div>
-        </div>
+        {/* </div> */}
         <Footer/>
       </body>
     </html>
