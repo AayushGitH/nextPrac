@@ -16,17 +16,21 @@ const AddTask = () => {
         userId: ""
     })
 
+    // console.log('I am under the add task page console')
+
     const handleAddTask = (event) => {
-        event.preventDeafault()
-        // console.log(event.target)
+        event.preventDefault()
+        console.log(event)
+        console.log("I am pressed")
     }
 
     return (
         <div className='grid grid-cols-12 text-white justify-center'>
             <div className='bg-gray-600 col-span-6 col-start-4 rounded-xl p-5'>
-                <form onSubmit={handleAddTask}>
+            {/* <button className='bg-blue-800 py-2 px-3 rounded-xl' name='save' onClick={e=>handleAddTask(e)}>Add todo</button> */}
+                <form action='#!' onSubmit={handleAddTask}>
                     <div className='flex justify-center'>
-                        <Image src={loginImage} style={{ width: '30%' }} />
+                        <Image src={loginImage} style={{ width: '30%' }} alt='Logging image' />
                     </div>
                     <h1 className='flex justify-center font-bold mt-3'>Add your task here</h1>
                     <div className='mt-4'>
@@ -76,8 +80,8 @@ const AddTask = () => {
                     </div>
 
                     <div className='mt-4 flex justify-center'>
-                        <button className='bg-blue-800 py-2 px-3 rounded-xl'>Add todo</button>
-                        <button className='bg-red-800 ms-2 py-2 px-3 rounded-xl'>Clear</button>
+                        <button className='bg-blue-800 py-2 px-3 rounded-xl' name='save' type='submit'>Add todo</button>
+                        <button className='bg-red-800 ms-2 py-2 px-3 rounded-xl' name='reset' type='reset'>Clear</button>
                     </div>
 
                     {JSON.stringify(task)}
