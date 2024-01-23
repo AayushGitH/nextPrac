@@ -49,7 +49,7 @@ const AddTask = () => {
 
     return (
         <div className='grid grid-cols-12 text-white justify-center'>
-            <div className='bg-gray-600 col-span-6 col-start-4 rounded-xl p-5'>
+            <div className='bg-slate-800 col-span-6 col-start-4 rounded-xl p-5'>
             {/* <button className='bg-blue-800 py-2 px-3 rounded-xl' name='save' onClick={e=>handleAddTask(e)}>Add todo</button> */}
                 <form action='#!' onSubmit={handleAddTask}>
                     <div className='flex justify-center'>
@@ -107,7 +107,7 @@ const AddTask = () => {
                         <button className='bg-red-800 ms-2 py-2 px-3 rounded-xl' name='reset' type='reset'>Clear</button>
                     </div>
 
-                    {JSON.stringify(task)}
+                    {/* {JSON.stringify(task)} */}
                 </form>
             </div>
         </div>

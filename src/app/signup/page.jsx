@@ -1,10 +1,13 @@
 import React from 'react'
+import Signup from './Signup'
+
+export const metadata = {
+  title: 'Sign-up page'
+}
 
 const SignUpPage = () => {
   return (
-    <div>
-      Signup page
-    </div>
+    <Signup/>
   )
 }
 
