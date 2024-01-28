@@ -106,9 +106,7 @@ const Signup = () => {
                             <button className='bg-yellow-600 py-1 ms-2 px-3 rounded' name='reset' type='reset'>Reset</button>
                         </div>
 
-                        {
-                            JSON.stringify(data)
-                        }
+                        {/* {JSON.stringify(data)} */}
                     </div>
                 </form>
             </div>
