@@ -1,6 +1,9 @@
+import { connectDB } from "@/helper/db";
 import { getErrorResponse } from "@/helper/getErrorResponse";
 import { Task } from "@/models/task";
 import { NextResponse } from "next/server";
+
+// connectDB()
 
 export async function GET() {
     try {

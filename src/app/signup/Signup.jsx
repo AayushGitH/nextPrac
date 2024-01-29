@@ -4,6 +4,7 @@ import signupbanner from '../../assets/signupImage.svg'
 import Image from 'next/image'
 import { addUser } from '@/services/userService'
 import { toast } from 'react-toastify'
+import bcrypt from 'bcryptjs'
 
 const Signup = () => {
     // console.log('I am the text under the signup page')
@@ -16,13 +17,17 @@ const Signup = () => {
         profileURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1mbS9s1Gab74WNQ3_-V0vjOjWGZW-OKViHkxIPQf2H7FJWYgujtdedb5h0kFObhKc6gM&usqp=CAU'
     })
 
-    const doSignUp = async(event) => {
+    const doSignUp = async (event) => {
         event.preventDefault()
-        console.log(data)
+        // console.log(data)
 
         try {
+            data.password = bcrypt.hashSync(
+                data.password,
+                parseInt(process.env.BCRYPT_SALT)
+            )
             const result = await addUser(data)
-            console.log(result)
+            console.log(data)
             toast.success('User is successfully added')
         } catch (error) {
             console.log(error)
