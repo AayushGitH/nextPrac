@@ -5,3 +5,9 @@ export const addUser = async(user) => {
                     .then((response)=> response.data)
     return result
 }
+
+export const loginUser = async(loginData) => {
+    const result = await httpAxios.post('/api/login', loginData)
+                    .then((response)=> response.data)
+    return result
+}

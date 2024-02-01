@@ -2,9 +2,13 @@
 import React, { useState } from 'react'
 import signupbanner from '../../assets/signupImage.svg'
 import Image from 'next/image'
+import { toast } from 'react-toastify'
+import { loginUser } from '@/services/userService'
+import { useRouter } from 'next/navigation'
 
 
 const LoginPage = () => {
+    const router = useRouter()
 
     const [loginData, setLoginData] = useState({
         email:'',
@@ -14,6 +18,18 @@ const LoginPage = () => {
     const doLogin = async(event) => {
         event.preventDefault()
         console.log(loginData)
+
+        try {
+            const result = await loginUser(loginData)
+            console.log(result)
+            toast.success('Logged in')
+            router.push('/profile')
+        } catch (error) {
+            console.log(error)
+            toast.error(error.response.data.message, {
+                position:'top-center'
+            })
+        }
     }
   return (
     <div className='grid grid-cols-12'>
