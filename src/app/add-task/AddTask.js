@@ -6,11 +6,6 @@ import Image from 'next/image'
 import { addTask } from '@/services/taskService';
 import { toast } from 'react-toastify';
 
-// We cannot use metadata in client component
-// export const metadata = {
-//     title: 'Add task - ' + process.env.SITE_NAME
-// }
-
 const AddTask = () => {
     const [task,setTask] = useState({
         title: "",
