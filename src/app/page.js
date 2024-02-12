@@ -6,7 +6,9 @@ export const metadata = {
 }
 
 export default function Home() {
+  console.log('Calling connection')
   connectDB()
+  console.log('Connection successfull')
   return (
     <div className='text-5xl flex justify-center'>
       <h1>Home page</h1>
