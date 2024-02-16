@@ -2,7 +2,7 @@ import { connectDB } from "@/helper/db"
 import { User } from "@/models/user"
 import { NextResponse } from "next/server"
 
-// connectDB()
+connectDB()
 
 export async function GET() {
     let users = []
