@@ -6,7 +6,7 @@ async function takeTime() {
 
 export default async function about() {
   await takeTime();
-  throw new Error('Manual error')
+  // throw new Error('Manual error')
   return (
     <div><h2><b>About page</b></h2></div>
   );
